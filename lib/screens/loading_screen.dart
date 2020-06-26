@@ -36,9 +36,20 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SpinKitDoubleBounce(
-          color: Colors.white,
-          size: 100,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/location_background.jpg'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(0.8), BlendMode.dstATop),
+            ),
+          ),
+          constraints: BoxConstraints.expand(),
+          child: SpinKitDoubleBounce(
+            color: Colors.white,
+            size: 100,
+          ),
         ),
       ),
     );
